@@ -1,5 +1,9 @@
+import cv2
 from flask import Flask
-from routes.live_catch import live_catch_bp
+from controllers.live_catch import live_catch_bp
+from flask_sockets import Sockets
+import redis
+
 
 def create_app():
     app = Flask(__name__)
@@ -8,11 +12,11 @@ def create_app():
 
 app = create_app()
 
-
 @app.route('/')
 def hello_world():  # put application's code here
     return 'Hello World!'
 
 
+
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=5002)

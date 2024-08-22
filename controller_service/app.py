@@ -1,7 +1,10 @@
-from flask import Flask
+import redis
+import websocket
+from flask import Flask, Response
 from controllers.relational_data_service import relational_data_service_bp
 from controllers.live_openpose_service import live_openpose_service_bp
 from controllers.upload_video_service import upload_video_service_bp
+
 
 
 
@@ -16,7 +19,6 @@ def create_app():
 
 
 app = create_app()
-
 
 @app.route('/')
 def hello_world():  # put application's code here
