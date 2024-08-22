@@ -1,0 +1,1 @@
+NO_FILE_UPLOADED_ERROR = {'message': 'Sorry no file selected', 'code': '400'}
