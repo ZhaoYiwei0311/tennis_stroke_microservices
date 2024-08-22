@@ -26,8 +26,6 @@ def stream_video(url):
 
 @live_openpose_service_bp.route('/relay_feed')
 def relay_feed():
-    # Consume the stream from the producer service
-    # print(Response(stream_with_context(stream_video('http://localhost:5002/video_feed')),
-    #                 mimetype='multipart/x-mixed-replace; boundary=frame'))
+
     return Response(stream_with_context(stream_video('http://localhost:5002/live_catch')),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
